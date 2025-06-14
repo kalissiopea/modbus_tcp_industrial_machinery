@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- <link rel="stylesheet" href="style.css" />  -->
+  {% block styles %}
+  <!-- <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='style.css')}}"> 
+  {% endblock %}
+  <body style="background-color:grey">
+  <title>Industrial App</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Nav -->
+    <nav class="main-nav">
+      <h2 class="logo">
+        Developer
+      </h2>
+      <ul class="main-menu">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="showcase" style="background-image: url('static/IndustrialSfondo')">
+      <style type="text/css">
+      .testo-bianco {
+        color: white;
+      }
+      </style>
+      <h2> 
+        <span class="testo-bianco">App for controlling industrial machineries</span>
+        </h2>
+      <p> 
+        <span class="testo-bianco">The functionality of this site consists in controlling a servo motor, a step motor through
+        just a click, also deciding the angle of rotation. There is the possibility to get parameters
+        through a DHT11 sensor. </span>
+      </p>
+      <p></p>
+    </header>
+
+    <!-- Box -->
+    <section class="box">
+      <!-- primo div -->
+      <div>
+        <img src="{{ url_for('static', filename='servoMotor.jpeg') }}" class="card-img-top" alt=""/>
+        <h3>Servo Motor</h3>
+        <p>
+          Servo Motor machine offers the possibility to rotate the previously inserted propeller,
+          <br>
+          by 90 and/or 180 degrees.
+        </p>
+        <button name="rotateBtn" onclick="window.location.href='{{ url_for( 'rotate_90' ) }}';">Rotate 90 degrees</button> <br>
+        <button name="rotateBtn" onclick="window.location.href='{{ url_for( 'rotate_180' ) }}';">Rotate 180 degrees</button> <br>
+        <button name="rotateBtn" onclick="window.location.href='{{ url_for( 'rotate_90_180' ) }}';">Rotate following the sequence 90-0-180-0 degrees</button> <br>
+        <p></p>
+      </div>
+
+      <!-- secondo div -->
+      <div>
+        <img src="{{ url_for('static', filename='stepMotor.png') }}" class="card-img-top" alt="" />
+        <h3>Step Motor</h3>
+        <p>
+          Step Motor machine offers the possibility to decide the rotation time, the angle 
+          <br>
+          and the clockwise or counterclockwise direction.
+        </p>
+        <a href="/step_motor">Enter Text<i></i></a>
+        <p></p>
+      </div>
+
+      <!-- terzo div -->
+      <div>
+        <img src="{{ url_for('static', filename='DHT11.png') }}" class="card-img-top" alt=""/>
+        <h3>DHT11 Sensor</h3>
+        <p>
+          The DHT11 Sensor offers the possibility to get the temperature and humidity parameters of the
+          <br>
+          surrounding environment.
+        </p>
+        <a href="/show_par">Show parameters<i></i></a>
+        <p></p>
+      </div>
+<!--
+    Footer 
+    <footer class="footer">
+      <div class="footer-inner">
+        <h2>Seguimi:</h2>
+         facebook 
+        <a href="/https://www.facebook.com">Facebook<i></i></a>
+
+         instagram
+        <a href="#"><i></i></a>
+
+         twitter
+        <a href="#"><i></i></a>
+
+         linkedin-->
+        <a href="#"><i></i></a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

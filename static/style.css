@@ -1,0 +1,236 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.5;
+    /*#8a2be2*/
+    background-color: grey;
+    color: black;
+  }
+  
+  
+  /*passiamo alla nav*/
+  .container{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  ul {
+    /*abbiamo tolto i pallini*/
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .main-nav{
+    /*tutto viene messo in orizzontale*/
+    display: flex;
+    /*creare spazi tra gli elementi*/
+    justify-content: space-between;
+    border-radius: 4px;
+    align-items: center;
+    font-weight: bold;
+    height: 80px;
+    font-size: 16px;
+    padding: 20px 0;
+  }
+  
+  .main-nav.logo{
+    font-size: 20px;
+  }
+  
+  .main-nav ul{
+    display: flex;
+  }
+  
+  .main-nav ul li{
+    padding: 0 20px;
+  }
+  
+  .main-nav ul li a {
+    /*striscia sotto il bottone a che distanza dal nome*/
+  padding-bottom: 2px;
+  }
+  
+  .main-nav ul li a:hover{
+    /*striscia sotto i bottoni, larghezza e colore*/
+  border-bottom: 2px solid black;
+  }
+  
+  .main-nav ul.main-menu{
+    display: flex;
+    margin-right: 30px;
+    padding: 0 20px;
+  }
+  
+  /*classe bottone
+  .btn{
+    si cambia quando passa sopra il cursore del mouse
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    background: black;
+    color: bisque;
+    border: 0;
+    font-size: 15px;
+    padding: 10px 20px;
+  }*/
+  /*
+  .btn:hover{
+    serve in modo che quando si passa con il cursore sul tasto cambia leggermente colore
+    opacity: 0.7;
+  }*/
+  
+  
+  /*passiamo all'header*/
+  .showcase{
+    width: 100%;
+    height: 400px;
+    /*background*/
+    background-image: url("static/sfondoIndustria40Centrale.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /*tutto in orizzontale*/
+    display: flex;
+    /*elementi in colonna*/
+    flex-direction: column;
+    /*elementi al centro*/
+    align-items: center;
+    /*elementi visualizzati a partire da sopra*/
+    justify-content: flex-end;
+    padding-bottom: 80px;
+    margin-bottom: 30px;
+  }
+  
+  .showcase h2{
+    /*cambiamo le dimensioni del font*/
+    font-size: 30px;
+  }
+  
+  header.showcase p{
+    color: blue;
+  }
+  
+  .showcase h2, .showcase p{
+    margin-bottom: 10px;
+  }
+  
+  /*
+  .showcase .btn{
+    margin-top: 15px;
+  }*/
+  
+  /*passiamo al Box*/
+  .box {
+    display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-gap: 20px;
+     margin-bottom: 30px;
+  }
+  
+  .box img{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .box h3{
+    margin-bottom: 5px;
+  }
+  
+  /*
+  .box a{
+    display: inline-block;
+    padding-top: 10px;
+    color: black;
+    font-weight: bold;
+  }*/
+  
+  /*
+  .box a:hover i{
+    sposta la freccetta di 3 px
+    margin-left: 3px;
+  }
+  
+
+  passiamo al Center
+  .center {
+    background-image: url("#");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .center .content{
+      per spostare il contenuto
+    width: 30%;
+    padding: 40px 0 0 40px;
+  
+  }
+  
+  .center p{
+    per i paragrafi
+    margin: 10px 0 20px;
+  }
+  
+  
+  .footer {
+    background-color: blue;
+  }
+  
+  .footer-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    padding: 20px 80px;
+    color: black;
+  }
+  
+  .footer-inner i:hover{
+    opacity: 0.3;
+  }
+  */
+  
+  /*manca la responsivity perchè se andiamo a rimpicciolire
+  si sposta il testo e le immagini*/
+  @media (max-width: /*800px*/ 1200px){
+    .box{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    /*
+    .center .content p{
+      display: none;
+      font-size: 10px;
+    }
+    .center .content h2{
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    .center .content .btn{
+      font-size: 10px;
+      padding: 10px;
+    }*/
+  
+    @media (max-width: 600px) {
+      .box{
+        grid-template-columns: 1fr;
+      }
+      .center .content p{
+        display: none;
+      }
+    }
+  
+  }
+  

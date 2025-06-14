@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- <link rel="stylesheet" href="style.css" />  -->
+  {% block styles %}
+  <!-- <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='style.css')}}"> 
+  {% endblock %}
+  <body style="background-color:grey">
+  <title>Industrial App</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Nav -->
+    <nav class="main-nav">
+      <h2 class="logo">
+        Developer
+      </h2>
+      <ul class="main-menu">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="showcase" style="background-image: url('static/IndustrialSfondo')">
+      <style type="text/css">
+      .testo-bianco {
+        color: white;
+      }
+      </style>
+      <h2> 
+        <span class="testo-bianco">App for controlling industrial machineries</span>
+        </h2>
+      <p> 
+        <span class="testo-bianco">The functionality of this site consists in controlling a servo motor, a step motor through
+        just a click, also deciding the angle of rotation. There is the possibility to get parameters
+        through a DHT11 sensor. </span>
+      </p>
+      <p></p>
+    </header>
+
+    <!-- Box -->
+    <section class="box">
+
+      <!-- terzo div -->
+      <div>
+        <img src="{{ url_for('static', filename='DHT11.png') }}" class="card-img-top" alt=""/>
+        <h3>DHT11 Sensor</h3>
+        <p>
+          The DHT11 Sensor offers the possibility to get the temperature and humidity parameters of the
+          <br>
+          surrounding environment.
+        </p>
+        <a href="#">Show parameters<i></i></a>
+        <p>TEMPERATURA : {{temper}}</p>
+        <p>UMIDITÀ : {{umid}}</p>
+      </div>
+
+      
+
+        <a href="#"><i></i></a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
